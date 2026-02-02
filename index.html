@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Aqi</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aqi</title>
 
 <style>
 body{
   margin:0;
-  font-family: sans-serif;
-  background: linear-gradient(#8fd3f4, #ffffff);
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#8fd3f4,#ffffff);
   text-align:center;
 }
 .page{
@@ -22,9 +21,9 @@ body{
   display:block;
 }
 button{
-  padding:15px 30px;
+  padding:14px 28px;
   border:none;
-  border-radius:25px;
+  border-radius:30px;
   background:#0077b6;
   color:white;
   font-size:16px;
@@ -32,16 +31,17 @@ button{
 }
 img{
   width:90%;
-  max-width:350px;
+  max-width:360px;
   margin:15px auto;
   border-radius:18px;
   display:block;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 .message{
   background:white;
-  padding:20px;
+  padding:22px;
   margin:20px;
-  border-radius:18px;
+  border-radius:20px;
   font-size:17px;
   line-height:1.8;
 }
@@ -51,31 +51,31 @@ img{
 <body>
 
 <!-- AUDIO -->
-<button onclick="startSong()">▶ Play Our Song 🎵</button>
+<button onclick="playSong()">▶ Play Our Song 🎵</button>
 
-<audio id="song" preload="auto">
-  <source src="./song.mp3" type="audio/mpeg">
+<audio id="music" controls style="display:none">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PAGE 1 -->
 <div class="page active" id="p1">
   <h1>🌴 Happy Birthday Aqi 😚❤️</h1>
   <h3>06 / 02</h3>
-  <button onclick="go(1)">Next ➜</button>
+  <button onclick="nextPage(1)">Next ➜</button>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page" id="p2">
   <h2>📸 Our Memories 💙</h2>
 
-  <img src="./img1.jpg">
-  <img src="./img2.jpg">
-  <img src="./img3.jpg">
-  <img src="./img4.jpg">
-  <img src="./img5.jpg">
-  <img src="./img6.jpg">
+  <img src="img1.jpg">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+  <img src="img4.jpg">
+  <img src="img5.jpg">
+  <img src="img6.jpg">
 
-  <button onclick="go(2)">Next ➜</button>
+  <button onclick="nextPage(2)">Next ➜</button>
 </div>
 
 <!-- PAGE 3 -->
@@ -84,37 +84,35 @@ img{
 
   <div class="message">
     Before meeting you I thought I didn’t need love.  
-    I thought <i>mai kaafi hu</i> to lead my life.  
+    I thought <i>mai kaafi hu</i> to lead my life.
     <br><br>
-    But after meeting you I realized what I was missing.  
-    You came into my life as a best friend jiski mujhe bohot zarurat thi,  
-    and now you have become such an important part  
+    But after meeting you I realized what I was missing.
+    You came into my life as a best friend jiski mujhe bohot zarurat thi,
+    and now you have become such an important part
     ki mai meri life tere bina imagine nahi kar sakti.
     <br><br>
-    Maine kabhi jiske saath baat tak nahi ki thi,  
+    Maine kabhi jiske saath baat tak nahi ki thi,
     aaj ussi ke saath meri life plan karti hu.
     <br><br>
-    You are my best friend,  
-    the LOVE of my life,  
+    You are my bestfriend,
+    the LOVE of my life,
     and my true soulmate.
     <br><br>
-    On your birthday, I just want to thank you  
-    for always being there for me in every way.  
-    That means more to me than any gift 🥹😚❤️
+    On your birthday I just want to thank you
+    for always being there for me in every way.
+    That means more to me than any other gift 🥹😚❤️
   </div>
 </div>
 
 <script>
-function go(n){
+function nextPage(n){
   document.getElementById("p"+n).classList.remove("active");
   document.getElementById("p"+(n+1)).classList.add("active");
 }
 
-function startSong(){
-  const audio = document.getElementById("song");
-  audio.play().catch(err => {
-    alert("Tap the Play button once again 🎵");
-  });
+function playSong(){
+  const audio = document.getElementById("music");
+  audio.play();
 }
 </script>
 
