@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aqi</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: sans-serif;
+  background: linear-gradient(#8fd3f4, #ffffff);
+  text-align:center;
+}
+.page{
+  display:none;
+  min-height:100vh;
+  padding:20px;
+}
+.page.active{
+  display:block;
+}
+button{
+  padding:15px 30px;
+  border:none;
+  border-radius:25px;
+  background:#0077b6;
+  color:white;
+  font-size:16px;
+  margin:25px 0;
+}
+img{
+  width:90%;
+  max-width:350px;
+  margin:15px auto;
+  border-radius:18px;
+  display:block;
+}
+.message{
+  background:white;
+  padding:20px;
+  margin:20px;
+  border-radius:18px;
+  font-size:17px;
+  line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<button onclick="startSong()">▶ Play Our Song 🎵</button>
+
+<audio id="song" preload="auto">
+  <source src="./song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+  <h1>🌴 Happy Birthday Aqi 😚❤️</h1>
+  <h3>06 / 02</h3>
+  <button onclick="go(1)">Next ➜</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <h2>📸 Our Memories 💙</h2>
+
+  <img src="./img1.jpg">
+  <img src="./img2.jpg">
+  <img src="./img3.jpg">
+  <img src="./img4.jpg">
+  <img src="./img5.jpg">
+  <img src="./img6.jpg">
+
+  <button onclick="go(2)">Next ➜</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+  <h2>💌 A Message For You</h2>
+
+  <div class="message">
+    Before meeting you I thought I didn’t need love.  
+    I thought <i>mai kaafi hu</i> to lead my life.  
+    <br><br>
+    But after meeting you I realized what I was missing.  
+    You came into my life as a best friend jiski mujhe bohot zarurat thi,  
+    and now you have become such an important part  
+    ki mai meri life tere bina imagine nahi kar sakti.
+    <br><br>
+    Maine kabhi jiske saath baat tak nahi ki thi,  
+    aaj ussi ke saath meri life plan karti hu.
+    <br><br>
+    You are my best friend,  
+    the LOVE of my life,  
+    and my true soulmate.
+    <br><br>
+    On your birthday, I just want to thank you  
+    for always being there for me in every way.  
+    That means more to me than any gift 🥹😚❤️
+  </div>
+</div>
+
+<script>
+function go(n){
+  document.getElementById("p"+n).classList.remove("active");
+  document.getElementById("p"+(n+1)).classList.add("active");
+}
+
+function startSong(){
+  const audio = document.getElementById("song");
+  audio.play().catch(err => {
+    alert("Tap the Play button once again 🎵");
+  });
+}
+</script>
+
+</body>
+</html>
